@@ -9,6 +9,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # Flutterのバージョンを表示する。
+echo "----------------------------------------"
 echo "🚀 Creating Flutter module with the following Flutter version:"
 flutter --version
 echo "----------------------------------------"
@@ -29,7 +30,10 @@ echo "----------------------------------------"
 
 # モジュールを作成する。
 echo "🛠️  Creating Flutter module..."
+rm -rf $TARGET_DIR
 flutter create -t module $TARGET_DIR
+
+echo "----------------------------------------"
 
 # pubspec.yaml をコピーする。
 echo "📄 Copying pubspec.yaml..."
@@ -76,6 +80,8 @@ awk '
   }
   { print }
 ' $TARGET_DIR/pubspec.yaml > $TARGET_DIR/pubspec.yaml.tmp && mv $TARGET_DIR/pubspec.yaml.tmp $TARGET_DIR/pubspec.yaml
+
+echo "----------------------------------------"
 
 # 依存関係をインストールする。
 echo "📦 Installing dependencies..."
