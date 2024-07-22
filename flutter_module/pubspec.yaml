@@ -1,6 +1,7 @@
 name: flutter_module
-description: "A new Flutter module project."
-version: 1.0.0+1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
 
 environment:
   sdk: '>=3.4.4 <4.0.0'
@@ -8,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
@@ -16,8 +16,8 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
-  uses-material-design: true
   module:
     androidX: true
     androidPackage: com.kosukesaigusa.flutter_module
     iosBundleIdentifier: com.kosukesaigusa.iOSApp
+  uses-material-design: true
