@@ -6,6 +6,7 @@
 - [ ] Initialize Flutter on Android.
 - [ ] Structure a multi packages Flutter app.
 - [x] Run `flutter create -t module` and create a module from existing Flutter app.
+- [ ] Give `dart-define` values to the Flutter module.
 - [ ] Specify a route when navigating to a Flutter page.
 - [ ] Navigate to another Flutter page from a Flutter page.
 - [ ] Navigate back to a native page from a Flutter page.
