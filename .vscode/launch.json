@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug flutter_module",
+      "program": "flutter_module/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug", "${input:device}"]
+    },
+    {
+      "name": "Release flutter_module",
+      "program": "flutter_module/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--release", "${input:device}"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "device",
+      "type": "pickString",
+      "description": "Select your Device",
+      "options": [
+        "",
+        // Pixel 7 (Kosuke)
+        "-d32061FDH2001B0",
+        // iPhone 15 Pro Max (Kosuke)
+        "-d00008130-000844C93E60001C",
+        // Chrome
+        "-dchrome"
+      ],
+      "default": ""
+    }
+  ]
+}
