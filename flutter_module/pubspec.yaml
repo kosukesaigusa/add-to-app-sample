@@ -20,4 +20,4 @@ flutter:
   module:
     androidX: true
     androidPackage: com.kosukesaigusa.flutter_module
-    iosBundleIdentifier: com.kosukesaigusa.flutterModule
+    iosBundleIdentifier: com.kosukesaigusa.iOSApp
