@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main(List<String> args) {
+  print('Received entrypointArgs: $args');
   runApp(const MainApp());
 }
 
@@ -12,7 +13,18 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Hello World!'),
+              Text(
+                String.fromEnvironment(
+                  'FOO',
+                  defaultValue: "String.fromEnvironment('Foo') is not defined",
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

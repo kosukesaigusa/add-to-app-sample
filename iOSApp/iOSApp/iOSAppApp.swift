@@ -38,7 +38,12 @@ class AppDelegate: FlutterAppDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Runs the default Dart entrypoint with a default Flutter route.
-      flutterEngine.run();
+      flutterEngine.run(
+        withEntrypoint: nil,
+        libraryURI: nil,
+        initialRoute: "/",
+        entrypointArgs: ["--dart-define=FOO=BAR"]
+      );
       // Used to connect plugins (only if you have plugins with iOS platform code).
       GeneratedPluginRegistrant.register(with: self.flutterEngine);
       return true;
