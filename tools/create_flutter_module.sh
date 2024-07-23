@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 引数の数をチェックする。
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 4 ]; then
     echo "❌ Error: Incorrect number of arguments"
-    echo "Usage: $0 <androidPackage> <iosBundleIdentifier>"
-    echo "Example: $0 com.example.flutter_module com.example.iOSApp"
+    echo "Usage: $0 <android_org> <android_project_name> <ios_org> <iOSProjectName>"
+    echo "Example: $0 com.example android_project_name com.example iOSProjectName"
     exit 1
 fi
 
@@ -18,9 +18,14 @@ echo "----------------------------------------"
 SOURCE_DIR="app"
 TARGET_DIR="flutter_module"
 
-# androidPackage と iosBundleIdentifier を引数から取得する。
-ANDROID_PACKAGE=$1
-IOS_BUNDLE_IDENTIFIER=$2
+# 引数から値を取得する。
+ANDROID_ORG=$1
+ANDROID_PROJECT_NAME=$2
+IOS_ORG=$3
+IOS_PROJECT_NAME=$4
+
+ANDROID_PACKAGE="${ANDROID_ORG}.${ANDROID_PROJECT_NAME}"
+IOS_BUNDLE_IDENTIFIER="${IOS_ORG}.${IOS_PROJECT_NAME}"
 
 echo "📁 Source directory: $SOURCE_DIR"
 echo "📁 Target directory: $TARGET_DIR"
@@ -28,12 +33,16 @@ echo "📱 Android package: $ANDROID_PACKAGE"
 echo "📱 iOS bundle identifier: $IOS_BUNDLE_IDENTIFIER"
 echo "----------------------------------------"
 
-# モジュールを作成する。
+# Android の設定を元にモジュールを作成する。
 echo "🛠️  Creating Flutter module..."
 rm -rf $TARGET_DIR
-flutter create -t module $TARGET_DIR
+flutter create -t module --org $ANDROID_ORG --project-name $ANDROID_PROJECT_NAME $TARGET_DIR
 
 echo "----------------------------------------"
+
+# iOS の設定を更新する。
+echo "🍎 Updating iOS configuration..."
+find $TARGET_DIR/.ios -type f \( -name "*.plist" -o -name "*.pbxproj" -o -name "*.swift" -o -name "*.h" -o -name "*.m" \) -print0 | xargs -0 sed -i '' "s/${ANDROID_ORG}.${ANDROID_PROJECT_NAME}/${IOS_BUNDLE_IDENTIFIER}/g"
 
 # pubspec.yaml をコピーする。
 echo "📄 Copying pubspec.yaml..."
