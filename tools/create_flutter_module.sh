@@ -92,9 +92,17 @@ awk '
 
 echo "----------------------------------------"
 
+cd $TARGET_DIR
+
 # 依存関係をインストールする。
 echo "📦 Installing dependencies..."
-cd $TARGET_DIR && flutter pub get
+flutter pub get
+
+echo "----------------------------------------"
+
+# iOS アプリで pod install する前に必要な ios-tools を precache する。
+echo "📲 Precaching ios-tools..."
+flutter precache --ios
 
 echo "----------------------------------------"
 echo "✅ Flutter module has been created successfully!"
