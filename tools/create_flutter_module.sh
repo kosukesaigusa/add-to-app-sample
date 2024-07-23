@@ -100,6 +100,12 @@ flutter pub get
 
 echo "----------------------------------------"
 
+# コードを生成する。
+echo "🔄 Generating code..."
+flutter pub run build_runner build -d
+
+echo "----------------------------------------"
+
 # iOS アプリで pod install する前に必要な ios-tools を precache する。
 echo "📲 Precaching ios-tools..."
 flutter precache --ios
