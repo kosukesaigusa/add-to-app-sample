@@ -41,7 +41,7 @@ class AppDelegate: FlutterAppDelegate {
       flutterEngine.run(
         withEntrypoint: nil,
         libraryURI: nil,
-        initialRoute: "/",
+        initialRoute: "/addToAppHome",
         entrypointArgs: ["--dart-define=FOO=BAR"]
       );
       // Used to connect plugins (only if you have plugins with iOS platform code).
