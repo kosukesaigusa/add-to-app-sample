@@ -1,10 +1,10 @@
-name: flutter_module
+name: add_to_app_sample
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '>=3.4.4 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   auto_route: ^8.3.0
@@ -13,14 +13,10 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: ^8.1.0
-  build_runner: ^2.4.0
+  build_runner: ^2.4.9
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
 
 flutter:
-  module:
-    androidX: true
-    androidPackage: com.kosukesaigusa.flutter_module
-    iosBundleIdentifier: com.kosukesaigusa.iOSApp
   uses-material-design: true
