@@ -4,19 +4,19 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - Flutter (from `../flutter_module/.ios/Flutter`)
-  - FlutterPluginRegistrant (from `../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - Flutter (from `../flutter_module/packages/app/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_module/packages/app/.ios/Flutter/FlutterPluginRegistrant`)
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "../flutter_module/.ios/Flutter"
+    :path: "../flutter_module/packages/app/.ios/Flutter"
   FlutterPluginRegistrant:
-    :path: "../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
+    :path: "../flutter_module/packages/app/.ios/Flutter/FlutterPluginRegistrant"
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   FlutterPluginRegistrant: 0b732256b4829f9783c18c68e2f9adacc1536955
 
-PODFILE CHECKSUM: eca476330384e426008359e1916eac08bbde2509
+PODFILE CHECKSUM: 7ddec8f5977a9fe02b758f1ce3a06b2b1f4674fb
 
 COCOAPODS: 1.15.2
