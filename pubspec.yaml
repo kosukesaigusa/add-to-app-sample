@@ -1,0 +1,10 @@
+name: add_to_app_sample_repository
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  melos: ^5.3.0
