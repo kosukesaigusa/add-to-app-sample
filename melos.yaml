@@ -4,6 +4,7 @@ repository: https://github.com/kosukesaigusa/add-to-app-sample
 
 packages:
   - flutter/packages/**
+  - flutter_module/packages/**
 
 sdkPath: .fvm/versions/3.22.3
 
