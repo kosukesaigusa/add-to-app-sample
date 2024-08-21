@@ -39,7 +39,7 @@ cp -R flutter/packages/* flutter_module/packages/
 # Android の設定を元にモジュールの本体 (app) を作成する。
 echo "🛠️  Creating Flutter module..."
 rm -rf flutter_module/packages/app
-flutter create -t module --org $ANDROID_ORG --project-name $ANDROID_PROJECT_NAME flutter_module/packages/app
+flutter create -t module --org "$ANDROID_ORG" --project-name "$ANDROID_PROJECT_NAME" flutter_module/packages/app
 
 echo "----------------------------------------"
 
@@ -104,7 +104,7 @@ echo "----------------------------------------"
 
 # iOS アプリで pod install する前に必要な ios-tools を precache する。
 echo "📲 Precaching ios-tools..."
-cd flutter_module/packages/app
+cd flutter_module/packages/app || exit
 flutter precache --ios
 
 echo "----------------------------------------"
